@@ -1,18 +1,25 @@
 import React, {useState, useEffect} from 'react'
 import config from './config';
+import AlbumDetailsFotos from "./AlbumDetailsFotos";
 
-export default function AlbumDetails({albumId}) {
-    const [album, setAlbum] = useState([]);
+export default function AlbumDetails() {
+    const [fotos, albums, setFoto] = useState([]);
 
     useEffect(() => {
-        fetch(`${config.albumUrl}/${albumId}`)
+        fetch(`${config.fotoUrl}`)
             .then(res => res.json())
-            .then(setAlbum)
+            .then(setFoto)
     }, [])
     return (
         <div>
-            <h3>Albums Details</h3>
-            <h4>{album.title}</h4>
+            <h3>Albums Fotos</h3>
+            <ul>
+                {fotos.map(foto => (
+                    <AlbumDetailsFotos
+                        key={foto.id}
+                        foto={foto} />
+                ))}
+            </ul>
         </div>
     )
 }
