@@ -11,13 +11,13 @@ function UserAlbum() {
             .then(setAlbums)
     }, [])
     return (
-        <ul>
+        <ol>
             {albums.map(album => (
-                    <UserAlbumItem
-                        key={album.id}
-                        album={album} />
+                <UserAlbumItem
+                key={album.id}
+                album={album} />
             ))}
-        </ul>
+        </ol>
 )
 }
 

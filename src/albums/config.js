@@ -1,3 +1,4 @@
 export default {
-    albumUrl : 'https://jsonplaceholder.typicode.com/albums/1/photos'
+    albumUrl : 'https://jsonplaceholder.typicode.com/albums/',
+    fotoUrl : 'https://jsonplaceholder.typicode.com/photos'
 }

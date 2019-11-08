@@ -3,7 +3,7 @@ import config from './config';
 import AlbumDetailsFotos from "./AlbumDetailsFotos";
 
 export default function AlbumDetails() {
-    const [fotos, albums, setFoto] = useState([]);
+    const [fotos, setFoto] = useState([]);
 
     useEffect(() => {
         fetch(`${config.fotoUrl}`)
@@ -13,6 +13,7 @@ export default function AlbumDetails() {
     return (
         <div>
             <h3>Albums Fotos</h3>
+             
             <ul>
                 {fotos.map(foto => (
                     <AlbumDetailsFotos
